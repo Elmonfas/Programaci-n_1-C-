@@ -1,25 +1,28 @@
 // --------------------------------------------------------------------
-// PEDRO MONFORT CARO / 17-09-2024 / sumarLista
+// PEDRO MONFORT CARO / 19-09-2024 / contiene
 // --------------------------------------------------------------------
+
 #include <iostream>
 using namespace std;
 
 // --------------------------------------------------------------------
-// numeros : [R] -> sumarArray() -> R
+// numeros & n : [R] & N -> contiene() -> B (True) / (False)
 // --------------------------------------------------------------------
 
-int sumarArray(int numeros[], int size){
+int contiene(int numeros[], int size, int n){
 
-    int suma = 0;
+    for (int i = 0; i < size; i++){
 
-    for (int i = 0; i < size; i++)
-    {
-        suma += numeros[i];
-
-    };
+        if ( n == numeros[i]){
+            
+            return true;    
+        
+        }
+        
+    }
     
-    return suma;
-    
+    return false;
+
 }
 
 // --------------------------------------------------------------------
@@ -27,14 +30,22 @@ int sumarArray(int numeros[], int size){
 
 int main(){
 
-int size = 5;
-int numeros[] = {1,2,3,4,5};
-int numero;
+    int numeros[] = {1,2,3,4,5};
 
-cout << "La suma total de los numeros es: " << sumarArray(numeros, size) <<"." <<endl;
+    int size = 5;
 
-return 0;
+    int n = 3;
 
+    if (contiene(numeros, size, n)){
+        
+        cout << "El numero " << n << " esta en la lista." << endl;
+
+    }else{
+
+        cout << "El numero " << n << " no esta en la lista." << endl;
+
+    }
+    
 }
 
 // --------------------------------------------------------------------

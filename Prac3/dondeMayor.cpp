@@ -1,25 +1,30 @@
 // --------------------------------------------------------------------
-// PEDRO MONFORT CARO / 17-09-2024 / sumarLista
+// PEDRO MONFORT CARO / 19-09-2024 / dondeMayor
 // --------------------------------------------------------------------
+
 #include <iostream>
 using namespace std;
 
 // --------------------------------------------------------------------
-// numeros : [R] -> sumarArray() -> R
+// numeros: [R] -> dondeEstaElMayor() -> R 
 // --------------------------------------------------------------------
 
-int sumarArray(int numeros[], int size){
+int dondeEstaElMayor(int numeros[], int size){
 
-    int suma = 0;
+    int mayor = 0;
 
     for (int i = 0; i < size; i++)
     {
-        suma += numeros[i];
+        if (numeros[i] > mayor){
 
-    };
+            mayor = numeros[i];
+
+        }
+        
+    }
     
-    return suma;
-    
+    return mayor;
+
 }
 
 // --------------------------------------------------------------------
@@ -27,13 +32,10 @@ int sumarArray(int numeros[], int size){
 
 int main(){
 
+int numeros[] = {1,2,200,4,5};
 int size = 5;
-int numeros[] = {1,2,3,4,5};
-int numero;
 
-cout << "La suma total de los numeros es: " << sumarArray(numeros, size) <<"." <<endl;
-
-return 0;
+cout << "El numero mayor de la lista es el " << dondeEstaElMayor(numeros, size) << "." << endl;
 
 }
 
