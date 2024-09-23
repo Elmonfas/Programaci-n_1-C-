@@ -1,6 +1,7 @@
 // --------------------------------------------------------------------
 // PEDRO MONFORT CARO / 17-09-2024 / filtrar
 // --------------------------------------------------------------------
+
 #include <iostream>
 using namespace std;
 
@@ -8,7 +9,9 @@ using namespace std;
 // numeros : [R] -> fitrar() -> [R]
 // --------------------------------------------------------------------
 
-int filtrar(int numeros[], int size, int positivos[], int &sizePositivos){ // Se agrega el '&' para que cualquier cambio realizado a sizePositivos afectara a la variable original en el amin()
+int filtrar(int numeros[], int size, int positivos[], int &sizePositivos){
+
+     // Se agrega el '&' para que cualquier cambio realizado a sizePositivos afectara a la variable original en el amin()
 
     sizePositivos = 0;
 
@@ -20,9 +23,9 @@ int filtrar(int numeros[], int size, int positivos[], int &sizePositivos){ // Se
 
             sizePositivos++;
 
-        };
+        }
 
-    };
+    }
 
     return sizePositivos;
 };
@@ -32,12 +35,10 @@ int filtrar(int numeros[], int size, int positivos[], int &sizePositivos){ // Se
 
 int main() {
 
-    
-
     int size = 6;
     
     int numeros[] = {1, -1, 3, 6, 7, -10};
-    
+
     int positivos[size];
     
     int sizePositivos = 0;
