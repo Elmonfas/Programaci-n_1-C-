@@ -1,9 +1,6 @@
 // ---------------------------------------------------
-// 
-// main.cpp
-// 
-// g++  Punto.cpp main.cpp 
-// 
+// PEDRO MONFORT CARO / 14-01-2025 / main.cpp
+// g++  Punto.cpp mainCercano.cpp 
 // ---------------------------------------------------
 
 #include <iostream>
