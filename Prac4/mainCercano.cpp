@@ -46,6 +46,26 @@ void leeListaPuntos( Punto * pLista, const int cuantos ) {
   }
 }
 
+Punto cercano(Punto * pLista, const int cuantos, Punto origen){
+     
+     Punto pCercano = pLista[0]; // Coge el primer elemento de la lista como el mas cercano
+
+    for (int i = 1; i < cuantos; i++){ // recorro la lista de puntos
+
+        if(origen.distancia(pLista[i]) < origen.distancia(pCercano)){ //comparo la distancias de ambos puntos
+
+            pCercano = pLista[i];  // en caso de ser menor, lo almaceni
+
+        }
+        
+    }
+
+    return pCercano; // lo devuelvo al main
+    
+
+
+}
+
 // ---------------------------------------------------
 // Función principal
 // ---------------------------------------------------
@@ -54,11 +74,16 @@ int main() {
 
   Punto origen;
 
-  Punto p1 = leePunto();
+  Punto plista[3];
 
-  double dist = origen.distancia( p1 );
+  plista[0] = Punto(3,-1);
+  plista[1] = Punto(1,1);
+  plista[2] = Punto(2,3);
 
-  std::cout << " la distancia de p1 al origen es " << dist << "\n";
+  std::cout << "----- 📍 CARACTERISTICAS 📍 -----\n";
+
+  std::cout << "El punto más cercano de la lista es: ";
+  muestraPunto(cercano(plista, 3, origen));  // Llama a la función que muestra el punto más lejano entre p1 y p2
 
 } 
 
